@@ -1,0 +1,41 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Window = OrionLib:MakeWindow({Name = "ExploitzHub [🌈] Raimbow Friends", HidePremium = false, IntroText = "ExploitzHub [🌈] Raimbow Friends"SaveConfi = true, ConfigFolder = "OrionTest"}) 
+
+local Tab = Window:MakeTab({ 	Name = "Welcome", 	Icon = "rbxassetid://4483345998", 	PremiumOnly = false })
+
+Tab:AddLabel("Hello! ")
+
+Tab:AddLabel("Version 1.0")
+
+Tab:AddLabel("Credits: Xnozx#9730")
+
+Tab:AddLabel("Made By BaconBlox in YT")
+
+local Tab = Window:MakeTab({ 	Name = "esp", 	Icon = "rbxassetid://4483345998", 	PremiumOnly = false })
+
+Tab:AddButton({ 	Name = "Players", 	Callback = function()
+
+local FillColor = Color3.fromRGB(175,25,255) local DepthMode = "AlwaysOnTop" local FillTransparency = 0.5 local OutlineColor = Color3.fromRGB(255,255,255) local OutlineTransparency = 0 local CoreGui = game:FindService("CoreGui") local Players = game:FindService("Players") local lp = Players.LocalPlayer local connections = {} local Storage = Instance.new("Folder") Storage.Parent = CoreGui Storage.Name = "Highlight_Storage" local function Highlight(plr) local Highlight = Instance.new("Highlight") Highlight.Name = plr.Name Highlight.FillColor = FillColor Highlight.DepthMode = DepthMode Highlight.FillTransparency = FillTransparency Highlight.OutlineColor = OutlineColor Highlight.OutlineTransparency = 0 Highlight.Parent = Storage local plrchar = plr.Character if plrchar then Highlight.Adornee = plrchar end connections[plr] = plr.CharacterAdded:Connect(function(char) Highlight.Adornee = char end) end Players.PlayerAdded:Connect(Highlight) for i,v in next, Players:GetPlayers() do Highlight(v) end Players.PlayerRemoving:Connect(function(plr) local plrname = plr.Name if Storage[plrname] then Storage[plrname]:Destroy() end if connections[plr] then connections[plr]:Disconnect() end end)
+
+print("esp false ui()") 	end })
+
+local Tab = Window:MakeTab({ 	Name = "Others", 	Icon = "rbxassetid://4483345998", 	PremiumOnly = false })
+
+Tab:AddButton({ 	Name = "Get All Items", 	Callback = function()
+
+for i,v in pairs(game.workspace.Map_C1.ItemSpawns:GetDescendants()) do if v.name == "ItemSpawn" then game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(v.Position) wait(0.1) end end
+
+print("Get All Items False()") 	end })
+
+Tab:AddButton({ 	Name = "Send Items", 	Callback = function()
+
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(371.54364013671875, 45.604129791259766, 132.65687561035156)
+
+print("Send Items False()") 	end })
+
+Tab:AddButton({ 	Name = "Fullbring", 	Callback = function()
+
+if not _G.FullBrightExecuted then _G.FullBrightEnabled = false _G.NormalLightingSettings = { Brightness = game:GetService("Lighting").Brightness, ClockTime = game:GetService("Lighting").ClockTime, FogEnd = game:GetService("Lighting").FogEnd, GlobalShadows = game:GetService("Lighting").GlobalShadows, Ambient = game:GetService("Lighting").Ambient } game:GetService("Lighting"):GetPropertyChangedSignal("Brightness"):Connect(function() if game:GetService("Lighting").Brightness ~= 1 and game:GetService("Lighting").Brightness ~= _G.NormalLightingSettings.Brightness then _G.NormalLightingSettings.Brightness = game:GetService("Lighting").Brightness if not _G.FullBrightEnabled then repeat wait() until _G.FullBrightEnabled end game:GetService("Lighting").Brightness = 1 end end) game:GetService("Lighting"):GetPropertyChangedSignal("ClockTime"):Connect(function() if game:GetService("Lighting").ClockTime ~= 12 and game:GetService("Lighting").ClockTime ~= _G.NormalLightingSettings.ClockTime then _G.NormalLightingSettings.ClockTime = game:GetService("Lighting").ClockTime if not _G.FullBrightEnabled then repeat wait() until _G.FullBrightEnabled end game:GetService("Lighting").ClockTime = 12 end end) game:GetService("Lighting"):GetPropertyChangedSignal("FogEnd"):Connect(function() if game:GetService("Lighting").FogEnd ~= 786543 and game:GetService("Lighting").FogEnd ~= _G.NormalLightingSettings.FogEnd then _G.NormalLightingSettings.FogEnd = game:GetService("Lighting").FogEnd if not _G.FullBrightEnabled then repeat wait() until _G.FullBrightEnabled end game:GetService("Lighting").FogEnd = 786543 end end) game:GetService("Lighting"):GetPropertyChangedSignal("GlobalShadows"):Connect(function() if game:GetService("Lighting").GlobalShadows ~= false and game:GetService("Lighting").GlobalShadows ~= _G.NormalLightingSettings.GlobalShadows then _G.NormalLightingSettings.GlobalShadows = game:GetService("Lighting").GlobalShadows if not _G.FullBrightEnabled then repeat wait() until _G.FullBrightEnabled end game:GetService("Lighting").GlobalShadows = false end end) game:GetService("Lighting"):GetPropertyChangedSignal("Ambient"):Connect(function() if game:GetService("Lighting").Ambient ~= Color3.fromRGB(178, 178, 178) and game:GetService("Lighting").Ambient ~= _G.NormalLightingSettings.Ambient then _G.NormalLightingSettings.Ambient = game:GetService("Lighting").Ambient if not _G.FullBrightEnabled then repeat wait() until _G.FullBrightEnabled end game:GetService("Lighting").Ambient = Color3.fromRGB(178, 178, 178) end end) game:GetService("Lighting").Brightness = 1 game:GetService("Lighting").ClockTime = 12 game:GetService("Lighting").FogEnd = 786543 game:GetService("Lighting").GlobalShadows = false game:GetService("Lighting").Ambient = Color3.fromRGB(178, 178, 178) local LatestValue = true spawn(function() repeat wait() until _G.FullBrightEnabled while wait() do if _G.FullBrightEnabled ~= LatestValue then if not _G.FullBrightEnabled then game:GetService("Lighting").Brightness = _G.NormalLightingSettings.Brightness game:GetService("Lighting").ClockTime = _G.NormalLightingSettings.ClockTime game:GetService("Lighting").FogEnd = _G.NormalLightingSettings.FogEnd game:GetService("Lighting").GlobalShadows = _G.NormalLightingSettings.GlobalShadows game:GetService("Lighting").Ambient = _G.NormalLightingSettings.Ambient else game:GetService("Lighting").Brightness = 1 game:GetService("Lighting").ClockTime = 12 game:GetService("Lighting").FogEnd = 786543 game:GetService("Lighting").GlobalShadows = false game:GetService("Lighting").Ambient = Color3.fromRGB(178, 178, 178) end LatestValue = not LatestValue end end end) end _G.FullBrightExecuted = true _G.FullBrightEnabled = not _G.FullBrightEnabled
+
+print("Fullbright False()") 	end })
